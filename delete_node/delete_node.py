@@ -39,17 +39,3 @@ class Solution(object):
         recurse(root, key)
         return root
 
-leaf_2 = TreeNode(2)
-leaf_4 = TreeNode(4)
-leaf_7 = TreeNode(7)
-root_3 = TreeNode(3, leaf_2, leaf_4)
-root_6 = TreeNode(6, None, leaf_7)
-root = TreeNode(5, root_3, root_6)
-
-x = deleteNode(root, 3)
-print(x.val)
-print(x.left.val)
-print(x.left.left.val)
-print(x.left.right)
-print(x.right.val)
-print(x.right.right.val)
