@@ -1,28 +1,3 @@
-# class Solution(object):
-#     def hasPathSum(self, root, targetSum):
-#         """
-#         :type root: Optional[TreeNode]
-#         :type targetSum: int
-#         :rtype: bool
-#         """
-#         def recurse(node, local_sum):
-#             if not (node.left or node.right):
-#                 return local_sum + node.val == targetSum
-
-#             res_left = res_right = False
-#             if node.left is not None:
-#                 res_left = recurse(node.left, local_sum + node.val)
-
-#             if node.right is not None:
-#                 res_right = recurse(node.right, local_sum + node.val)
-
-
-#             return res_left or res_right
-
-#         if root is None:
-#             return False
-#         return recurse(root, 0)
-
 class Node:
     def __init__(self, L, R, n):
         self.left = L
