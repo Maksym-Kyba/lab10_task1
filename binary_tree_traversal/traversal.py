@@ -48,9 +48,36 @@ def pre_order(node):
         return order
 
     if not node.left and not node.right:
-        return ''
-
+        return order
     return recurse(node, order)
+
+
+'''# In-order traversal
+def in_order(node):
+    return []'''
+
+# Post-order traversal
+def post_order(node):
+    order = ''
+
+    def recurse(node, order):
+        if not (node.left or node.right):
+            return order + f'{node.data}'
+
+        if node.left is not None:
+            order = recurse(node.left, order)
+
+        if node.right is not None:
+            order = recurse(node.right, order)
+
+        order = order + f'{node.data}'
+
+        return order
+
+    if not node.left and not node.right:
+        return order
+    return recurse(node, order)
+
 
 leaf_7 = Node(7)
 leaf_6 = Node(6)
@@ -62,12 +89,5 @@ root_4 = Node(4, leaf_6, leaf_7)
 root_2 = Node(2, root_4, leaf_5)
 root = Node(1, root_2, root_3)
 
+print(post_order(root))
 print(pre_order(root))
-
-'''# In-order traversal
-def in_order(node):
-    return []
-
-# Post-order traversal
-def post_order(node):
-    return []'''
