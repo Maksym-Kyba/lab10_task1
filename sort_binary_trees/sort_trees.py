@@ -30,11 +30,13 @@ class Node:
         self.value = n
 
 def tree_by_levels(node):
+    if node is None:
+        return []
     sorted_trees = []
 
     def height(node):
         if node is None:
-            return None
+            return -1
 
         if not (node.left or node.right):
             return 0
