@@ -33,6 +33,9 @@ def tree_by_levels(node):
     sorted_trees = []
 
     def height(node):
+        if node is None:
+            return None
+
         if not (node.left or node.right):
             return 0
 
@@ -41,6 +44,8 @@ def tree_by_levels(node):
 
         return max(left_height, right_height) + 1
 
+    if height(node) is None:
+        return sorted_trees
     tree_height = height(node) + 1
     levels = {x: [] for x in range(tree_height)}
 
